@@ -18,7 +18,7 @@ type Props = {};
 
 declare const window: any;
 
-const contractAddress = '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512';
+const contractAddress = '0x5077cAa147c89f3C8103e36f083a55016867da7B';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -95,6 +95,7 @@ const NFTImage = ({ tokenId, getCount }: any) => {
 
 const Home = (props: Props) => {
   const [totalMinted, setTotalMinted] = useState(0);
+  console.log('totalMinted', totalMinted);
 
   useEffect(() => {
     getCount();

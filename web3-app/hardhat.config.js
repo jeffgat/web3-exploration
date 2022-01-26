@@ -39,6 +39,12 @@ module.exports = {
     localhost: {
       chainId: 31337,
     },
+    matic: {
+      url: 'https://polygon-mumbai.g.alchemy.com/v2/0uPkpk8p2K34Pn5X2v-WejVKf4E2j7z_',
+      accounts: [
+        'ac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80',
+      ],
+    },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,
