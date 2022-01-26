@@ -1,10 +1,11 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.2;
 
-import "../node_modules/@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "../node_modules/@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
-import "../node_modules/@openzeppelin/contracts/access/Ownable.sol";
-import "../node_modules/@openzeppelin/contracts/utils/Counters.sol";
+// throwing error but works just fine
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract HiHannyas is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter;
@@ -44,7 +45,7 @@ contract HiHannyas is ERC721, ERC721URIStorage, Ownable {
         return super.tokenURI(tokenId);
     }
 
-    function isContentOWned(string memory uri) public view returns (bool) {
+    function isContentOwned(string memory uri) public view returns (bool) {
         return existingURIs[uri] == 1;
     }
 
