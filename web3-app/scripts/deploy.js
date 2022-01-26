@@ -6,6 +6,14 @@
 const hre = require('hardhat');
 
 async function main() {
+  
+  // const networkName = hre.network.name;
+  // console.log('networkName 1', networkName);
+  // const chainId = hre.network.config.chainId;
+  // console.log('chainId 2', chainId);
+
+
+
   // Hardhat always runs the compile task when running scripts with its command
   // line interface.
   //
@@ -15,7 +23,7 @@ async function main() {
 
   // We get the contract to deploy
   const HiHannyas = await hre.ethers.getContractFactory('HiHannyas');
-  const hihannyas = await HiHannyas.deploy('Hello, Hardhat!');
+  const hihannyas = await HiHannyas.deploy();
 
   await hihannyas.deployed();
 

@@ -2,8 +2,8 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "/Users/jeffreygatbonton/Desktop/Code/0-Practice/web3/web3-app/contracts/NFT.sol": {
-      "lastModificationDate": 1643173955051,
-      "contentHash": "1b73db7610c1d9c604ef7d72e75d09d2",
+      "lastModificationDate": 1643174383158,
+      "contentHash": "08a8e26c60cd718d9613cf982f0ee617",
       "sourceName": "contracts/NFT.sol",
       "solcConfig": {
         "version": "0.8.4",

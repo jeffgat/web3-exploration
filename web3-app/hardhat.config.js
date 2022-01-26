@@ -26,11 +26,18 @@ module.exports = {
   paths: {
     artifacts: './src/artifacts',
   },
+  defaultNetwork: 'hardhat',
   networks: {
     ropsten: {
       url: process.env.ROPSTEN_URL || '',
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+    },
+    hardhat: {
+      chainId: 31337,
+    },
+    localhost: {
+      chainId: 31337,
     },
   },
   gasReporter: {
