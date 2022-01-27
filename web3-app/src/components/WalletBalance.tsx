@@ -30,7 +30,7 @@ const WalletBalance = (props: Props) => {
   return (
     <Box>
       <Heading fontSize='20px' mb='4'>
-        Your ETH Balance:{' '}
+        Your MATIC Balance:{' '}
         <Text as='span' textDecoration='underline'>
           {balance}
         </Text>

@@ -31,7 +31,6 @@ const NFTImage = ({ tokenId, getCount }: any) => {
   // from pinata
   const contentId = 'QmQU98M4ExPLisDdMZb7qbtQRR7gThWtMeWHXdLNGBzBfG';
   const metadataURI = `${contentId}/${tokenId}.json`;
-  console.log('metadataURI', metadataURI);
   const imageURI = `images/${tokenId}.png`;
   // const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.webp`; // not working well
 
@@ -43,7 +42,6 @@ const NFTImage = ({ tokenId, getCount }: any) => {
 
   const getMintedStatus = async () => {
     const result = await contract.isContentOwned(metadataURI);
-    console.log(result);
     setIsMinted(result);
   };
 
@@ -82,7 +80,7 @@ const NFTImage = ({ tokenId, getCount }: any) => {
       </Text>
       {!isMinted ? (
         <Button onClick={mintToken} colorScheme='teal'>
-          Mint New Hannya
+          Mint
         </Button>
       ) : (
         <Button onClick={getURI} colorScheme='red'>
@@ -94,8 +92,7 @@ const NFTImage = ({ tokenId, getCount }: any) => {
 };
 
 const Home = (props: Props) => {
-  const [totalMinted, setTotalMinted] = useState(0);
-  console.log('totalMinted', totalMinted);
+  const [totalMinted, setTotalMinted] = useState(1);
 
   useEffect(() => {
     getCount();
@@ -106,6 +103,7 @@ const Home = (props: Props) => {
     setTotalMinted(parseInt(count));
   };
 
+  console.log('arr', Array(totalMinted + 1));
   return (
     <Box mt='4'>
       <Container maxW='120ch'>
@@ -114,11 +112,11 @@ const Home = (props: Props) => {
         <Box my='4'>
           <Heading mb='4'>Hi-Hannya NFT Collection</Heading>
           <SimpleGrid columns={3} spacing='4'>
-            {Array(totalMinted + 1)
+            {Array(totalMinted)
               .fill(0)
               .map((_, i) => (
                 <Box key={i}>
-                  <NFTImage tokenId={i} getCount={getCount} />
+                  <NFTImage tokenId={i + 1} getCount={getCount} />
                 </Box>
               ))}
           </SimpleGrid>
