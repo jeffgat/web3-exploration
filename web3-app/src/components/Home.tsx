@@ -32,8 +32,8 @@ const NFTImage = ({ tokenId, getCount }: any) => {
   const contentId = 'QmQU98M4ExPLisDdMZb7qbtQRR7gThWtMeWHXdLNGBzBfG';
   const metadataURI = `${contentId}/${tokenId}.json`;
   console.log('metadataURI', metadataURI);
-  const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.webp`;
-  // const imageURI = `img/${tokenId.png} // to host locally
+  const imageURI = `images/${tokenId}.png`;
+  // const imageURI = `https://gateway.pinata.cloud/ipfs/${contentId}/${tokenId}.webp`; // not working well
 
   const [isMinted, setIsMinted] = useState(false);
 
